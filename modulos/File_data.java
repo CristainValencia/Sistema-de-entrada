@@ -7,7 +7,9 @@ public class File_data {
 
     public JFileChooser FSelectorLocal(){
 
-        
+        JFileChooser file_selector = new JFileChooser();
+        file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
     }
 
 }
