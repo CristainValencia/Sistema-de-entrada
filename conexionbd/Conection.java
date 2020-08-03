@@ -24,7 +24,7 @@ public class Conection { // Clase principal de conexión
             System.out.println("¡La entrada de la base de datos BASE, tuvo exito!");
 
         } else {
-            // Acciona de - Salida
+            // Acciona - Salida
             connBD().close();
         }
     }
