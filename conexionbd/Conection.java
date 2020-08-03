@@ -1,15 +1,15 @@
 package conexionbd; // Paquete principal - path: C:\Users\javier1\IdeaProjects\Sistema\src\conexionbd
 
-import java.sql.*; // Bibloteca SQL
+import java.sql.*; // Biblioteca SQL | Importación de métodos para la conexión
 
-public class Conection { // Clase principal de conexion
+public class Conection { // Clase principal de conexión
 
-    private boolean banderabd; // Baandera
+    private boolean banderabd; // Bandera | Valida y gestiona bajo condición
     public Conection() throws SQLException { // Constructor BASE
 
-        try { // Intenta canalizar código con falla
+        try { // Intenta canalizar código con falla | De lo contrario no hay problemas
 
-            connBD();
+            connBD(); // Método de la conexión
 
             banderabd = true; // Bandera - Entrada
 
@@ -18,13 +18,13 @@ public class Conection { // Clase principal de conexion
 
             banderabd = false; // Bandera - Salida
         }
-        //Codición de verificación
+        //Condición de verificación
         if(banderabd == true){
             // Mensaje - Entrada
             System.out.println("¡La entrada de la base de datos BASE, tuvo exito!");
 
         } else {
-            // Accion de - Salida
+            // Acciona de - Salida
             connBD().close();
         }
     }
