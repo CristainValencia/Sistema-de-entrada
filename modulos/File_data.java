@@ -22,9 +22,11 @@ public class File_data {
 
     public JFileChooser FSelectorLocal(){
 
-        JFileChooser file_selector = new JFileChooser();
+        JFileChooser file_selector = new JFileChooser();s
         file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
+
+        int selector_jbutton = file_selector.showOpenDialog(null);
     }
 
     
