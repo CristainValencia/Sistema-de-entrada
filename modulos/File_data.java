@@ -1,5 +1,7 @@
 package modulos;
 
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
@@ -22,6 +24,9 @@ public class File_data {
 
 
     public JFileChooser FSelectorLocal(){
+
+        String extensionesManueal = JOptionPane.showInputDialog(null,"Por favor escribe la extensión manual:",
+                "Mensaje del sistama / Manual",JOptionPane.QUESTION_MESSAGE);
 
         JFileChooser file_selector = new JFileChooser();
         file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
