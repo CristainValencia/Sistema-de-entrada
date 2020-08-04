@@ -27,38 +27,44 @@ public class File_data {
     }
 
 
-    public JFileChooser FSelectorLocal(){
+    public JFileChooser FSelectorLocal() {
 
         String default1 = "";
 
-       int elecionCantidadExten = JOptionPane.showOptionDialog(null, "Cantidad de extensiones: ","Mensaje del sistema / Manual"
-                ,JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
-               null,  new Object[]{"1 ex","2 ex"}, this);
+        int elecionCantidadExten = JOptionPane.showOptionDialog(null, "Cantidad de extensiones: ", "Mensaje del sistema / Manual"
+                , JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+                null, new Object[]{"1 ex", "2 ex"}, this);
 
-       if(elecionCantidadExten == JOptionPane.OK_OPTION) {
+        if (elecionCantidadExten == JOptionPane.OK_OPTION) {
 
             extensionesManueal0 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 1 manual:",
-                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+                    "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
             default1 = "*." + extensionesManueal0;
             bandera = true;
-       } else {
-           extensionesManueal0 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 1 manual:",
-                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+        } else {
+            extensionesManueal0 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 1 manual:",
+                    "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
 
-           extensionesManueal1 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 2 manual:",
-                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
-           bandera = false;
+            extensionesManueal1 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 2 manual:",
+                    "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+            bandera = false;
 
-       }
-
-           JFileChooser file_selector = new JFileChooser();
-           file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-           FileNameExtensionFilter fileExtensiónRepositorio = new FileNameExtensionFilter();
-           file_selector.setFileFilter(fileExtensiónRepositorio);
+        }
+        if (bandera == true) {
+            JFileChooser file_selector = new JFileChooser();
+            file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            FileNameExtensionFilter fileExtensiónRepositorio = new FileNameExtensionFilter(default1, extensionesManueal0);
+            file_selector.setFileFilter(fileExtensiónRepositorio);
+        } else {
+            JFileChooser file_selector = new JFileChooser();
+            file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            FileNameExtensionFilter fileExtensiónRepositorio = new FileNameExtensionFilter(extensionesManueal0, extensionesManueal1);
+            file_selector.setFileFilter(fileExtensiónRepositorio);
+        }
     }
 
 
-    public void file_ex(){
-        
+    public void file_ex() {
+
     }
 }
