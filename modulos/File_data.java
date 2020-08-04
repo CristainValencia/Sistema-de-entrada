@@ -12,4 +12,7 @@ public class File_data {
 
     }
 
+    public void file_ex(){
+        
+    }
 }
