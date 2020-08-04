@@ -3,6 +3,8 @@ package modulos;
 import javax.swing.*;
 import java.io.File;
 
+import static javax.swing.JFileChooser.APPROVE_OPTION;
+
 
 public class File_data {
 
@@ -20,17 +22,28 @@ public class File_data {
     }
 
 
-    public JFileChooser FSelectorLocal(){
+    public JFileChooser FSelectorLocal() {
 
-        JFileChooser file_selector = new JFileChooser();s
+        JFileChooser file_selector = new JFileChooser();
         file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
 
         int selector_jbutton = file_selector.showOpenDialog(null);
+
+        switch (selector_jbutton) {
+
+            case APPROVE_OPTION:
+                break;
+
+            default:
+                break;
+
+
+        }
     }
 
-    
-    public void file_ex(){
-        
+
+    public void file_ex() {
+
     }
 }
