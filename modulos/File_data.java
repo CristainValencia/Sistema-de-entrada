@@ -11,7 +11,9 @@ public class File_data {
 
     private final String path_barra = File.separator;
     private static String nombre_ficheroex;
-
+    private String extensionesManueal0;
+    private String extensionesManueal1;
+    private boolean bandera;
 
     private File fichero_ex;
 
@@ -20,19 +22,39 @@ public class File_data {
 
         fichero_ex = null;
         nombre_ficheroex = "";
+        extensionesManueal0 = "";
+        extensionesManueal1 = "";
     }
 
 
     public JFileChooser FSelectorLocal(){
 
-        String extensionesManueal = JOptionPane.showInputDialog(null,"Por favor escribe la extensión manual:",
-                "Mensaje del sistama / Manual",JOptionPane.QUESTION_MESSAGE);
+        String default1 = "";
 
-        JFileChooser file_selector = new JFileChooser();
-        file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-        FileNameExtensionFilter fileExtensiónRepositorio = new FileNameExtensionFilter(
-                "*.PNG","PNG", "*.JPG", "JPG");
-        file_selector.setFileFilter(fileExtensiónRepositorio);
+       int elecionCantidadExten = JOptionPane.showOptionDialog(null, "Cantidad de extensiones: ","Mensaje del sistema / Manual"
+                ,JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+               null,  new Object[]{"1 ex","2 ex"}, this);
+
+       if(elecionCantidadExten == JOptionPane.OK_OPTION) {
+
+            extensionesManueal0 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 1 manual:",
+                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+            default1 = "*." + extensionesManueal0;
+            bandera = true;
+       } else {
+           extensionesManueal0 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 1 manual:",
+                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+
+           extensionesManueal1 = JOptionPane.showInputDialog(null, "Por favor escribe la extensión 2 manual:",
+                   "Mensaje del sistema / Manual", JOptionPane.QUESTION_MESSAGE);
+           bandera = false;
+
+       }
+
+           JFileChooser file_selector = new JFileChooser();
+           file_selector.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+           FileNameExtensionFilter fileExtensiónRepositorio = new FileNameExtensionFilter();
+           file_selector.setFileFilter(fileExtensiónRepositorio);
     }
 
 
