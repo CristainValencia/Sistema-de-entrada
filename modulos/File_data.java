@@ -2,18 +2,23 @@ package modulos;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.File.*;
+
 
 public class File_data {
 
     private final String path_barra = File.separator;
-    private File fichero_ex;
     private static String nombre_ficheroex;
+
+
+    private File fichero_ex;
+
+
     public File_data() {
 
         fichero_ex = null;
         nombre_ficheroex = "";
     }
+
 
     public JFileChooser FSelectorLocal(){
 
@@ -22,6 +27,7 @@ public class File_data {
 
     }
 
+    
     public void file_ex(){
         
     }
